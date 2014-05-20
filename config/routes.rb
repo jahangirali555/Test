@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :shakirs
+  devise_for :members
   resources :events
 
     match "/index" => "shakir#index", via: :get
