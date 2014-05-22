@@ -6,12 +6,15 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
+    @title = "Events"
     @events = Event.all
+    
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+    @comments = Comment.where(event_id: params[:id])
   end
 
   # GET /events/new
